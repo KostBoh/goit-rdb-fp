@@ -1,0 +1,18 @@
+DROP FUNCTION year_difference_from_date;
+
+DELIMITER //
+CREATE FUNCTION year_difference_from_date(year INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN 
+DECLARE date_january_first DATE;
+DECLARE year_diff INT;
+SET date_january_first = CONCAT(year, '-01-01');
+SET year_diff=TIMESTAMPDIFF(YEAR,date_january_first, CURDATE());
+RETURN year_diff;
+end//
+DELIMITER ;
+
+SELECT Year,
+year_difference_from_date(Year) AS year_difference
+FROM infectious_cases;

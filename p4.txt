@@ -1,0 +1,5 @@
+SELECT  Year,
+CONCAT(Year, '-01-01') AS date_january_first,
+CURDATE() AS currents_date,
+TIMESTAMPDIFF(YEAR, CONCAT(Year, '-01-01'),  CURDATE()) year_difference
+FROM infectious_cases;

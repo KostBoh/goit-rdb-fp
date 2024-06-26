@@ -1,0 +1,5 @@
+create schema pandemic;
+
+USE pandemic;
+
+Select * FROM infectious_cases;

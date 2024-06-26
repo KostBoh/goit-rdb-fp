@@ -1,0 +1,12 @@
+create table country AS
+SELECT Entity, Code 
+FROM infectious_cases
+group by Entity, Code;
+
+ALTER table infectious_cases
+drop column Entity ;
+
+
+
+
+SELECT * FROM pandemic.country;

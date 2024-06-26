@@ -1,0 +1,11 @@
+select 
+Code, 
+AVG(Number_rabies) AVG, 
+MIN(Number_rabies) MIN, 
+MAX(Number_rabies) MAX,
+sum(Number_rabies) SUM
+FROM infectious_cases
+WHERE Number_rabies > 0
+group by Code
+order by AVG desc
+limit 10;
